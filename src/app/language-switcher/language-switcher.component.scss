@@ -1,0 +1,26 @@
+.language-switcher {
+  .form-check {
+    display: flex;
+    align-items: center;
+
+    .form-check-input {
+      width: 60px;
+      height: 20px;
+      appearance: none;
+      background-color: #c6c6c6;
+      border-radius: 20px;
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:checked {
+        background-color: rgb(74, 200, 231);
+      }
+    }
+
+    .form-check-label {
+      margin-left: 0.5rem;
+    }
+  }
+}

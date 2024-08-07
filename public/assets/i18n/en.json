@@ -1,0 +1,23 @@
+{
+  "HOME": "HOME",
+  "LOGIN": "LOGIN",
+  "ACCOUNT": "ACCOUNT",
+
+    "ACCOUNT_PAGE": "Account Page",
+    "CURRENT_LANGUAGE": "Current Language",
+    "USER_EMAIL": "User Email",
+
+
+
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required.",
+  "EMAIL_INVALID": "Invalid email format.",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_REQUIRED": "Password is required.",
+  "LOGIN_BUTTON": "Login",
+  "REGISTER_BUTTON": "Register",
+
+  "LOGOUT": "Logout"
+}

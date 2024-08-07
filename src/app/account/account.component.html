@@ -1,0 +1,6 @@
+<div class="container">
+  <h2>{{ 'ACCOUNT_PAGE' | translate }}</h2>
+  <p>{{ 'CURRENT_LANGUAGE' | translate }}: {{ (currentLanguage$ | async) | uppercase }}</p>
+  <p>{{ 'USER_EMAIL' | translate }}: {{ (user$ | async)?.email }}</p>
+  <button (click)="logout()">{{ 'LOGOUT' | translate }}</button>
+</div>

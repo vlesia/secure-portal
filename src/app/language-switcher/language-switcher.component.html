@@ -1,0 +1,15 @@
+<form class="language-switcher" id="languageSwitcher">
+  <div class="form-check form-switch">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="languageToggle"
+      [checked]="isChecked"
+      (change)="changeLanguage($event)"
+    />
+    <label class="form-check-label" for="languageToggle">
+      {{ currentLanguage | uppercase }}
+    </label>
+  </div>
+</form>
+
