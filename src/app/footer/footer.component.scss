@@ -1,3 +1,5 @@
+@import "../../styles/mixins.scss";
+
 .footer {
   background-color: #f8f9fa;
   width: 100%;
@@ -7,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 8px 16px;
 }
 
 .footer-links {
@@ -19,9 +21,13 @@
   margin: 0;
 }
 
+.link-item {
+  padding: 8px;
+}
+
 .link {
   display: inline-block;
-  padding: 20px;
+  padding: 8px;
   text-decoration: none;
   white-space: nowrap;
   color: rgb(95, 93, 93);
@@ -31,6 +37,15 @@
   color: black;
 }
 
-.active {
+.link.active {
+  background-color: #e9eaea;
+  border-radius: 5px;
   color: black;
+}
+
+@include tablet {
+  .footer-links {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 }

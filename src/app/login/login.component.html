@@ -1,35 +1,66 @@
-<div class="container">
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
-    <div class="form-group">
-      <label for="email">{{ "EMAIL_LABEL" | translate }}</label>
+<div *ngIf="isLoading$ | async">{{ "LOADING" | translate }}</div>
+
+<div *ngIf="!(isLoading$ | async)" class="form-container">
+  <div class="toggle-container">
+    <button
+      [class.active]="!showRegister"
+      (click)="toggleForm()"
+      class="toggle-button"
+    >
+      {{ "LOGIN_BUTTON" | translate }}
+    </button>
+    <button
+      [class.active]="showRegister"
+      (click)="toggleForm()"
+      class="toggle-button"
+    >
+      {{ "REGISTER_BUTTON" | translate }}
+    </button>
+  </div>
+
+  <form
+    *ngIf="!showRegister"
+    [formGroup]="loginForm"
+    (ngSubmit)="onLogin()"
+    class="form"
+  >
+    <div class="form-item">
+      <label class="label" for="email">{{ "EMAIL_LABEL" | translate }}</label>
       <input
         type="email"
         id="email"
         formControlName="email"
-        class="form-control"
+        class="input"
+        autocomplete="email"
         placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}"
       />
       <div
         *ngIf="
           loginForm.get('email')?.invalid && loginForm.get('email')?.touched
         "
-        class="text-danger"
+        class="error-message"
       >
         <div *ngIf="loginForm.get('email')?.errors?.['required']">
           {{ "EMAIL_REQUIRED" | translate }}
         </div>
-        <div *ngIf="loginForm.get('email')?.errors?.['email']">
+        <div
+          *ngIf="loginForm.get('email')?.errors?.['email']
+          && !loginForm.get('email')?.errors?.['required']"
+        >
           {{ "EMAIL_INVALID" | translate }}
         </div>
       </div>
     </div>
-    <div class="form-group">
-      <label for="password">{{ "PASSWORD_LABEL" | translate }}</label>
+    <div class="form-item">
+      <label class="label" for="password">{{
+        "PASSWORD_LABEL" | translate
+      }}</label>
       <input
         type="password"
         id="password"
         formControlName="password"
-        class="form-control"
+        class="input"
+        autocomplete="current-password"
         placeholder="{{ 'PASSWORD_PLACEHOLDER' | translate }}"
       />
       <div
@@ -37,23 +68,21 @@
           loginForm.get('password')?.invalid &&
           loginForm.get('password')?.touched
         "
-        class="text-danger"
+        class="error-message"
       >
         <div *ngIf="loginForm.get('password')?.errors?.['required']">
           {{ "PASSWORD_REQUIRED" | translate }}
         </div>
       </div>
     </div>
-    <button
-      type="submit"
-      class="btn btn-primary"
-      [disabled]="loginForm.invalid"
-    >
+    <button type="submit" class="submit-button">
       {{ "LOGIN_BUTTON" | translate }}
     </button>
 
-    <div *ngIf="errorMessage" class="custom-alert">
+    <div *ngIf="errorMessage" class="alert-message">
       {{ errorMessage }}
     </div>
   </form>
+
+  <app-register *ngIf="showRegister"></app-register>
 </div>

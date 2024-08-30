@@ -1,29 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { LanguageService } from '../services/language.service';
 import { CommonModule } from '@angular/common';
+import { Observable } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-language-switcher',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './language-switcher.component.html',
   styleUrl: './language-switcher.component.scss'
 })
-export class LanguageSwitcherComponent implements OnInit {
-  currentLanguage: string = 'en';
-  isChecked: boolean = false;
+export class LanguageSwitcherComponent  {
+  currentLanguage$: Observable<string>;
 
-  constructor(private translationService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.translationService.currentLanguage$.subscribe(language => {
-      this.currentLanguage = language;
-      this.isChecked = language === 'uk';
-    });
+  constructor(private translate: LanguageService) {
+    this.currentLanguage$ = this.translate.currentLanguage$;
   }
 
   changeLanguage(event: any): void {
     const language = event.target.checked ? 'uk' : 'en';
-    this.translationService.changeLanguage(language);
+    this.translate.changeLanguage(language);
   }
 }

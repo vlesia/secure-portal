@@ -1,6 +1,21 @@
 <div class="container">
-  <h2>{{ 'ACCOUNT_PAGE' | translate }}</h2>
-  <p>{{ 'CURRENT_LANGUAGE' | translate }}: {{ (currentLanguage$ | async) | uppercase }}</p>
-  <p>{{ 'USER_EMAIL' | translate }}: {{ (user$ | async)?.email }}</p>
-  <button (click)="logout()">{{ 'LOGOUT' | translate }}</button>
+  <section class="account-info">
+    <div class="profile-header">
+      <div class="avatar">
+        <div class="avatar-placeholder">U</div>
+      </div>
+      <h1>
+        {{ "WELCOME" | translate }}
+      </h1>
+    </div>
+    <div class="user-details">
+      <p>{{ "USER_EMAIL" | translate }}: {{ (user$ | async)?.email }}</p>
+      <p>
+        {{ "CURRENT_LANGUAGE" | translate }}: {{ "CURRENT_LANG" | translate }}
+      </p>
+    </div>
+    <button class="logout-button" (click)="logout()">
+      {{ "LOGOUT" | translate }}
+    </button>
+  </section>
 </div>

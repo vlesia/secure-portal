@@ -1,0 +1,30 @@
+{
+  "HOME": "Home",
+  "LOGIN": "Login",
+  "ACCOUNT": "Account",
+
+  "CURRENT_LANG": "En",
+
+  "WELCOME": "Welcome!",
+  "CURRENT_LANGUAGE": "Current Language",
+  "USER_EMAIL": "User Email",
+
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Enter your email",
+  "EMAIL_REQUIRED": "Email is required.",
+  "EMAIL_INVALID": "Invalid email format.",
+  "PASSWORD_LABEL": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter your password",
+  "PASSWORD_REQUIRED": "Password is required.",
+  "LOGIN_BUTTON": "Sign in",
+  "REGISTER_BUTTON": "Sign up",
+
+  "PASSWORD_TOO_SHORT": "Password must be at least 6 characters long",
+  "CONFIRM_PASSWORD_LABEL": "Confirm Password",
+  "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password",
+  "PASSWORDS_MISMATCH": "Passwords do not match",
+
+  "LOGOUT": "Logout",
+
+  "LOADING": "Loading..."
+}

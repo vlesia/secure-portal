@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { LanguageService } from '../services/language.service';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
 
 @Component({
@@ -11,14 +10,5 @@ import { LanguageSwitcherComponent } from '../language-switcher/language-switche
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent implements OnInit {
-  currentLanguage: string = 'en';
-
-  constructor(private translationService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.translationService.currentLanguage$.subscribe(language => {
-      this.currentLanguage = language;
-    });
-  }
+export class FooterComponent {
 }

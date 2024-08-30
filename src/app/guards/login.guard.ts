@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 export class LoginGuard implements CanActivate {
   constructor(private authService: AuthService, private router: Router) {}
 
-  canActivate(): Observable<boolean> | Promise<boolean> | boolean {
+  canActivate(): Observable<boolean> {
     return this.authService.isAuthenticated().pipe(
       map((isAuthenticated) => {
         if (isAuthenticated) {

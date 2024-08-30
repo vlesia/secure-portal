@@ -1,0 +1,30 @@
+{
+  "HOME": "Головна",
+  "LOGIN": "Увійти",
+  "ACCOUNT": "Обліковий запис",
+
+  "CURRENT_LANG": "Укр",
+
+  "WELCOME": "Ласкаво просимо!",
+  "CURRENT_LANGUAGE": "Поточна мова",
+  "USER_EMAIL": "Email користувача",
+
+  "EMAIL_LABEL": "Email",
+  "EMAIL_PLACEHOLDER": "Введіть ваш email",
+  "EMAIL_REQUIRED": "Email обов'язковий.",
+  "EMAIL_INVALID": "Неправильний формат email.",
+  "PASSWORD_LABEL": "Пароль",
+  "PASSWORD_PLACEHOLDER": "Введіть ваш пароль",
+  "PASSWORD_REQUIRED": "Пароль обов'язковий.",
+  "LOGIN_BUTTON": "Увійти",
+  "REGISTER_BUTTON": "Зареєструватися",
+
+  "PASSWORD_TOO_SHORT": "Пароль має бути не менше 6 символів",
+  "CONFIRM_PASSWORD_LABEL": "Підтвердження пароля",
+  "CONFIRM_PASSWORD_PLACEHOLDER": "Підтвердіть ваш пароль",
+  "PASSWORDS_MISMATCH": "Паролі не співпадають",
+
+  "LOGOUT": "Вихід",
+
+  "LOADING": "Завантаження..."
+}

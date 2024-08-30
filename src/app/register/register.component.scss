@@ -1,55 +1,5 @@
 @import "../../styles/mixins.scss";
 
-.form-container {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  width: 480px;
-  box-sizing: border-box;
-  margin: 20px auto;
-}
-
-.toggle-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.toggle-button {
-  padding: 5px 5px;
-  font-size: 18px;
-  font-weight: 500;
-  border: 2px solid gray;
-  border-left: none;
-  border-right: none;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.toggle-button:first-child {
-  border-left: 2px solid gray;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-
-.toggle-button:last-child {
-  border-right: 2px solid gray;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.toggle-button:hover {
-  background-color: rgb(203, 201, 201);
-}
-
-.toggle-button.active {
-  background-color: black;
-  border: 2px solid black;
-  color: white;
-}
-
 .form {
   width: 100%;
 }
@@ -76,9 +26,9 @@
 }
 
 .input:focus {
-  border-color: #007bff;
+  border-color: #80bdff;
   outline: none;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
 }
 
 .submit-button {
@@ -91,7 +41,6 @@
   margin-bottom: 10px;
   background-color: #007bff;
   color: #fff;
-  font-weight: 500;
   transition: background-color 0.3s, box-shadow 0.3s;
 
   &:hover {
@@ -99,8 +48,6 @@
     transform: translateY(-2px);
   }
 }
-
-
 
 .error-message {
   color: #dc3545;
@@ -117,15 +64,6 @@
 }
 
 @include tablet {
-  .form-container {
-    padding: 1rem;
-    width: 280px;
-  }
-
-  .toggle-button {
-    font-size: 16px;
-  }
-
   .form-item {
     margin-bottom: 1rem;
   }

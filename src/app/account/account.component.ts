@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { User } from '../models/user.model';
 import { CommonModule } from '@angular/common';
-import { LanguageService } from '../services/language.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,15 +15,8 @@ import { Router } from '@angular/router';
 })
 export class AccountComponent implements OnInit {
   user$: Observable<User | null> = new Observable<User | null>();
-  currentLanguage$: Observable<string>;
 
-  constructor(
-    private authService: AuthService,
-    private translate: LanguageService,
-    private router: Router
-  ) {
-    this.currentLanguage$ = this.translate.currentLanguage$;
-  }
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.user$ = this.authService.getUser();

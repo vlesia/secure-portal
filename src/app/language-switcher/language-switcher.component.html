@@ -1,15 +1,13 @@
-<form class="language-switcher" id="languageSwitcher">
+<form class="language-switcher">
   <div class="form-check form-switch">
     <input
       class="form-check-input"
       type="checkbox"
-      id="languageToggle"
-      [checked]="isChecked"
+      [checked]="(currentLanguage$ | async) === 'uk'"
       (change)="changeLanguage($event)"
     />
-    <label class="form-check-label" for="languageToggle">
-      {{ currentLanguage | uppercase }}
+    <label class="form-check-label">
+      {{ ('CURRENT_LANG' | translate) }}
     </label>
   </div>
 </form>
-

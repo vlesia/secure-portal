@@ -1,10 +1,8 @@
 import { NgClass } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
-import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -13,14 +11,14 @@ import { LanguageService } from '../services/language.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
-  currentLanguage: string = 'en';
+export class HeaderComponent {
+  @ViewChild('navbarNav') navbarNav!: ElementRef;
 
-  constructor(private translationService: LanguageService) {}
-
-  ngOnInit(): void {
-    this.translationService.currentLanguage$.subscribe((language) => {
-      this.currentLanguage = language;
-    });
+  closeNavbar() {
+    const navbarCollapse = this.navbarNav.nativeElement;
+    if (navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    }
   }
+
 }
